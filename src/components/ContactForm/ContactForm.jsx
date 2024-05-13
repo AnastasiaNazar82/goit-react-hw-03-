@@ -1,5 +1,6 @@
 import { Formik, Form, ErrorMessage, Field } from "formik";
 import { useId } from "react";
+import { nanoid } from "nanoid";
 import * as Yup from "yup";
 import css from "./ContactForm.module.css";
 
@@ -13,15 +14,15 @@ const ContactShema = Yup.object().shape({
     .required("Required"),
 });
 
-export default function ContactForm(onAdd) {
+export default function ContactForm({ onAdd }) {
   const nameFieldId = useId();
   const numberFieldId = useId();
 
-  const handleSubmit = (value, actions) => {
+  const handleSubmit = (values, actions) => {
     onAdd({
-      name: value.contactName,
-      number: value.contactNumber,
-      id: Date.now(),
+      name: values.contactName,
+      number: values.contactNumber,
+      id: nanoid(),
     });
     actions.resetForm();
   };
