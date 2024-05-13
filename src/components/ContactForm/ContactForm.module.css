@@ -19,7 +19,7 @@
   border: 1px solid black;
   border-radius: 5px;
   outline: none;
-  transition: 0.3s;
+  transition: 0.2s;
 }
 
 .form_input:focus {
@@ -42,7 +42,7 @@
 
 .btn:focus,
 .btn:hover {
-  background-color: #7788f9;
+  background-color: #455099;
 }
 
 .form_error {
